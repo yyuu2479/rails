@@ -1,0 +1,20 @@
+h1
+  | 新規登録
+- if @list.errors.any?
+  = @list .errros.count
+  | 件のエラーが発生しました
+  = @list.errors.full_messages.each do |message|
+    = message
+
+= form_with model: @list, todolists_path, local: true do |f|
+  h4
+    | タイトル
+  = f.text_field :title
+  h4
+    | 本文
+  = f.text_area :body
+  h4
+    | 画像
+  = f.attachment_field :image
+  div
+    = f.submit '投稿'

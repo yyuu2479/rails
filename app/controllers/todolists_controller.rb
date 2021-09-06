@@ -1,8 +1,6 @@
 class TodolistsController < ApplicationController
-  
-  
   def new
-    @list = List.new
+    @list = List.new  
   end
   
   def create
@@ -20,9 +18,9 @@ class TodolistsController < ApplicationController
   end
   
   def show
-    @list = List.find(params[:id])
+   @list = List.find(params[:id])
   end
-  
+
   def edit
     @list = List.find(params[:id])
   end
@@ -39,7 +37,7 @@ class TodolistsController < ApplicationController
     redirect_to todolists_path
   end
   
-  # プライベート
+  # ストロングパラメーター
   private
   def list_params
     params.require(:list).permit(:title,:body,:image)

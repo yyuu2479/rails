@@ -1,0 +1,9 @@
+.list-wrap
+  - @lists.each do |list|
+    .list-box
+      = attachment_image_tag list, :image, format: 'jpeg', size:"200x200"
+      .list-comment
+        span.list-body
+          =list.body
+        span.list-title
+          = link_to list.title, todolist_path(list.id)

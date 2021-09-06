@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title SampleApp
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag   'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+
+body
+  header
+    h1.headline
+      | ALL Lists
+  nav
+    ul.nav-list
+      li.nav-list-item
+        = link_to "Top", top_path
+      li.nav-list-item
+        = link_to "TodoLists", todolists_path
+      li.nav-list-item
+        = link_to "New List"
+  main
+    = yield

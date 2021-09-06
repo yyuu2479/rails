@@ -1,0 +1,13 @@
+h2  タイトル
+p
+  = @list.title
+h2  本文
+p
+  = @list.body
+h2 画像
+= attachment_image_tag @list, :image, format: 'jpeg', size: '300x300'
+
+
+= link_to "編集", edit_todolist_path(@list.id)
+= link_to "削除", destroy_todolist_path(@list.id), method: :delete,
+  "data-confilm" => "本当に削除します"
