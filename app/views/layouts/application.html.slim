@@ -20,6 +20,6 @@ body
       li.nav-list-item
         = link_to "TodoLists", todolists_path
       li.nav-list-item
-        = link_to "New List"
+        = link_to "New List", todolists_new_path
   main
-    = yield
+    == yield

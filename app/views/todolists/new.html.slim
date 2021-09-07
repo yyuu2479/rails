@@ -6,7 +6,7 @@ h1
   = @list.errors.full_messages.each do |message|
     = message
 
-= form_with model: @list, todolists_path, local: true do |f|
+= form_with model: @list, url: todolists_new_path, local: true do |f|
   h4
     | タイトル
   = f.text_field :title
